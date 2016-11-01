@@ -1,0 +1,33 @@
+﻿<Window x:Class="Cronometrage.WPF.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_Evento">
+                    <MenuItem Header="Cadastrar" Command="{Binding EventoViewCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></MenuItem>
+                    <MenuItem Header="Gerenciar" Command="{Binding GerenciarEventoCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></MenuItem>
+                </MenuItem>
+
+                <MenuItem Header="_Modalidade">
+                    <MenuItem Header="Cadastrar" Command="{Binding ModalidadeCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></MenuItem>
+                    <MenuItem Header="Gerenciar" Command="{Binding GerenciarModalidadeCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></MenuItem>
+                </MenuItem>
+
+                <MenuItem Header="_Faixa">
+                    <MenuItem Header="Cadastrar" Command="{Binding FaixaCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></MenuItem>
+                    <MenuItem Header="Gerenciar" Command="{Binding GerenciarFaixaCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></MenuItem>
+                </MenuItem>
+
+                <MenuItem Header="_Atleta">
+                    <MenuItem Header="Cadastrar" Command="{Binding AtletaCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></MenuItem>
+                    <MenuItem Header="Gerenciar" Command="{Binding GerenciarAtletaCommand,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></MenuItem>
+                </MenuItem>
+
+                <MenuItem Header="_Sobre"></MenuItem>
+            </Menu>
+            <StackPanel></StackPanel>
+        </DockPanel>               
+    </Grid>
+</Window>

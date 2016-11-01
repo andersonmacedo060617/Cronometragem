@@ -1,0 +1,15 @@
+﻿<Window x:Class="Cronometrage.WPF.View.Modalidades.GerenciarModalidadeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cronometrage.WPF.View.Modalidades"
+        mc:Ignorable="d"
+        Title="GerenciarModalidade" Height="403.075" Width="537">
+    <Grid>
+        <DataGrid HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Height="241" Width="509" ItemsSource="{Binding Modalidades, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding ModalidadeSelecionada,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="66" Margin="10,296,0,0" Stroke="Black" VerticalAlignment="Top" Width="509"/>
+        <Button Content="Excluir" HorizontalAlignment="Left" Margin="21,308,0,0" VerticalAlignment="Top" Width="75" Command="{Binding ExcluirModalidadeCommand,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+    </Grid>
+</Window>

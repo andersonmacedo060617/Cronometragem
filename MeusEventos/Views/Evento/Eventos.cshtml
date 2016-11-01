@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Cronometragem.NH.Model.Evento>
+
+<p>
+    @Html.ActionLink("Criar Evento", "IncluirEventos")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Local)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Largada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Obs)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+            
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Local)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Largada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Obs)
+        </td>
+        <td>
+            @Html.ActionLink("Faixas", "FaixasEventos", new { id = item.Id })
+            @Html.ActionLink("Alterar", "AlterarEvento", new { id=item.Id }) |
+            @Html.ActionLink("Cancelar", "CancelarEvento", new { id=item.Id })
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="5">
+            <table>
+                <tr>
+                    <th>Faixa(Descrição)</th>
+                </tr>
+                @foreach(var f in item.Faixas)
+                {
+                    <tr>
+                        <td>@f.Descricao</td>
+                    </tr>                   
+                }
+            </table>
+        </td>
+    </tr>
+}
+
+</table>

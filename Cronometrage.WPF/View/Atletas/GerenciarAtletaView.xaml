@@ -1,0 +1,15 @@
+﻿<Window x:Class="Cronometrage.WPF.View.Atletas.GerenciarAtletaView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cronometrage.WPF.View.Atletas"
+        mc:Ignorable="d"
+        Title="GerenciarAtletaView" Height="403.075" Width="537">
+    <Grid>
+        <DataGrid HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Height="241" Width="509" ItemsSource="{Binding Atletas, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding AtletaSelecionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="66" Margin="10,296,0,0" Stroke="Black" VerticalAlignment="Top" Width="509"/>
+        <Button Content="Excluir" HorizontalAlignment="Left" Margin="21,308,0,0" VerticalAlignment="Top" Width="75" Command="{Binding ExcluirAtletaCommand,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+    </Grid>
+</Window>
